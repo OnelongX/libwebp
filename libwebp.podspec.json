@@ -1,38 +1,38 @@
 {
   "name": "libwebp",
   "version": "0.6.0",
-  "summary": "fork libwebp from google",
-  "description": "fork libwebp from google",
+  "summary": "Library to encode and decode images in WebP format.",
   "homepage": "https://github.com/xilankong/libwebp",
+  "authors": "Google Inc.",
   "license": {
     "type": "BSD",
     "file": "COPYING"
-  },
-  "authors": {
-    "Google Inc.": "Google Inc."
   },
   "source": {
     "git": "https://github.com/xilankong/libwebp.git",
     "tag": "0.6.0"
   },
-  "requires_arc": false,
   "compiler_flags": "-D_THREAD_SAFE",
+  "requires_arc": false,
   "platforms": {
-    "ios": null
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
   },
   "subspecs": [
     {
       "name": "webp",
       "header_dir": "webp",
-      "source_files": "libwebp/src/webp/*.h"
+      "source_files": "src/webp/*.h"
     },
     {
       "name": "core",
       "source_files": [
-        "libwebp/src/utils/*.{h,c}",
-        "libwebp/src/dsp/*.{h,c}",
-        "libwebp/src/enc/*.{h,c}",
-        "libwebp/src/dec/*.{h,c}"
+        "src/utils/*.{h,c}",
+        "src/dsp/*.{h,c}",
+        "src/enc/*.{h,c}",
+        "src/dec/*.{h,c}"
       ],
       "dependencies": {
         "libwebp/webp": [
@@ -74,7 +74,7 @@
     },
     {
       "name": "demux",
-      "source_files": "libwebp/src/demux/*.{h,c}",
+      "source_files": "src/demux/*.{h,c}",
       "dependencies": {
         "libwebp/core": [
 
@@ -83,7 +83,7 @@
     },
     {
       "name": "mux",
-      "source_files": "libwebp/src/mux/*.{h,c}",
+      "source_files": "src/mux/*.{h,c}",
       "dependencies": {
         "libwebp/core": [
 
