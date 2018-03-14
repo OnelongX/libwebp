@@ -10,12 +10,11 @@ fork libwebp from google
   s.homepage         = 'https://github.com/xilankong/libwebp'
 
   s.license          = { :type => 'BSD', :file => 'COPYING' }
-  s.author           = { 'xilankong' => 'young.huang' }
+  s.author           = { 'Google Inc.' => 'Google Inc.' }
   s.source           = { :git => 'https://github.com/xilankong/libwebp.git', :tag => s.version.to_s }
   s.requires_arc = false
-  s.ios.deployment_target = '8.0'
-  s.source_files = 'libwebp/Classes/**/*'
   s.compiler_flags = '-D_THREAD_SAFE'
+  s.platform = :ios
 
   s.subspec "webp" do |ss|
     ss.name = 'webp'

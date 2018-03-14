@@ -1,22 +1,94 @@
 {
   "name": "libwebp",
-  "version": "0.1.0",
-  "summary": "A short description of libwebp.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.6.0",
+  "summary": "fork libwebp from google",
+  "description": "fork libwebp from google",
   "homepage": "https://github.com/xilankong/libwebp",
   "license": {
-    "type": "MIT",
-    "file": "LICENSE"
+    "type": "BSD",
+    "file": "COPYING"
   },
   "authors": {
-    "xilankong": "young.huang"
+    "Google Inc.": "Google Inc."
   },
   "source": {
     "git": "https://github.com/xilankong/libwebp.git",
-    "tag": "0.1.0"
+    "tag": "0.6.0"
   },
+  "requires_arc": false,
+  "compiler_flags": "-D_THREAD_SAFE",
   "platforms": {
-    "ios": "8.0"
+    "ios": null
   },
-  "source_files": "libwebp/Classes/**/*"
+  "subspecs": [
+    {
+      "name": "webp",
+      "header_dir": "webp",
+      "source_files": "libwebp/src/webp/*.h"
+    },
+    {
+      "name": "core",
+      "source_files": [
+        "libwebp/src/utils/*.{h,c}",
+        "libwebp/src/dsp/*.{h,c}",
+        "libwebp/src/enc/*.{h,c}",
+        "libwebp/src/dec/*.{h,c}"
+      ],
+      "dependencies": {
+        "libwebp/webp": [
+
+        ]
+      }
+    },
+    {
+      "name": "utils",
+      "dependencies": {
+        "libwebp/core": [
+
+        ]
+      }
+    },
+    {
+      "name": "dsp",
+      "dependencies": {
+        "libwebp/core": [
+
+        ]
+      }
+    },
+    {
+      "name": "enc",
+      "dependencies": {
+        "libwebp/core": [
+
+        ]
+      }
+    },
+    {
+      "name": "dec",
+      "dependencies": {
+        "libwebp/core": [
+
+        ]
+      }
+    },
+    {
+      "name": "demux",
+      "source_files": "libwebp/src/demux/*.{h,c}",
+      "dependencies": {
+        "libwebp/core": [
+
+        ]
+      }
+    },
+    {
+      "name": "mux",
+      "source_files": "libwebp/src/mux/*.{h,c}",
+      "dependencies": {
+        "libwebp/core": [
+
+        ]
+      }
+    }
+  ]
 }
