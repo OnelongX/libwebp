@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'libwebp'
   s.version          = '0.6.0'
-  s.summary          = 'A short description of libwebp.'
+  s.summary          = 'fork libwebp from google'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+fork libwebp from google
                        DESC
 
   s.homepage         = 'https://github.com/xilankong/libwebp'
@@ -14,7 +14,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/xilankong/libwebp.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
-
+  s.header_dir = 'webp'
   s.source_files = 'libwebp/Classes/**/*'
 
 end
