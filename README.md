@@ -2,9 +2,23 @@ libwebp fork
 
 来自于google的webp编译库
 
-ios引用方式：podspec的方式依赖进工程
+ios引用方式：
 
-配合SDWebImage/WebP 和 JFZWebView 可以实现原生和H5的webp适配
+```
+  pod 'libwebp', :git => 'https://github.com/xilankong/libwebp.git'
+  pod 'SDWebImage/WebP'
+```
+
+或者 直接将工程内的json文件放入工程中
+
+```
+  pod 'libwebp', :podspec => 'libwebp.podspec.json'
+  pod 'SDWebImage/WebP'
+```
+
+
+
+配合SDWebImage/WebP 和 YangWebView 可以实现原生和H5的webp适配
 
 单独抽出目的：
 
