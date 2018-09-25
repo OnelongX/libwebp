@@ -4,10 +4,6 @@
   "summary": "Library to encode and decode images in WebP format.",
   "homepage": "https://github.com/xilankong/libwebp",
   "authors": "Google Inc.",
-  "license": {
-    "type": "BSD",
-    "file": "COPYING"
-  },
   "source": {
     "git": "https://github.com/xilankong/libwebp.git",
     "tag": "0.6.0"
